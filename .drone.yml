@@ -4,7 +4,7 @@ type: docker
 name: k8s-cluster
 
 steps:
-
+      
 - name: initialize aws plugin for terraform
   image: garrett89/gabteste:teste
   environment:
@@ -14,7 +14,7 @@ steps:
       from_secret: aws_secret
   commands:
   - terraform init
-
+  
 - name: create aws infra
   image: garrett89/gabteste:teste
   environment:
@@ -23,8 +23,8 @@ steps:
     AWS_SECRET_ACCESS_KEY:
       from_secret: aws_secret
   commands:
-  - terraform apply -auto-approve 
-
+  - terraform apply -auto-approve
+  
 - name: apply ansible playbook
   image: garrett89/gabteste:teste
   environment:
@@ -38,5 +38,5 @@ steps:
   - mkdir -p ~/.ssh/
   - echo "$PRIVATE_KEY" > ~/.ssh/id_rsa
   - unset PRIVATE_KEY
-  - chmod 777 ~/.ssh/id_rsa
+  - chmod 600 ~/.ssh/id_rsa
   - ansible-playbook -i ec2.py --limit "tag_name_k8s" -u ubuntu --ssh-common-args='-o StrictHostKeyChecking=no' --private-key ~/.ssh/id_rsa site.yml
