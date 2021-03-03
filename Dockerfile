@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM ubuntu:18.04
 RUN apt-get update && \
 apt-get install ansible wget unzip python3-pip -y && \
 pip3 install boto && \
