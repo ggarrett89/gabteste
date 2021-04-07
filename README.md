@@ -1,4 +1,18 @@
-# gabteste
-Teste infra estrutura pipeline
+Teste utilizando ferramentas e conceitos DevOps.
 
-Este projeto utiliza Ansible, Terraform, Github, Kubernetes, Docker e DroneCI
+Teste criando Pipeline com as ferramentas:
+
+    Docker
+    Ansible
+    Terraform
+    Drone CI
+    AWS
+    Kubernetes
+
+How does it work?
+
+    Terraform criando 3 instancias AWS, Security Group e pares de chaves.
+    Ansible instala e configura Kubernetes.
+    CI/CD com Git e Drone CI pipeline.
+    Drone CI build com container Docker configurado com Terraform er Ansible.
+
