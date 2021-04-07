@@ -9,7 +9,7 @@ Teste criando Pipeline com as ferramentas:
     AWS
     Kubernetes
 
-How does it work?
+Passos:
 
     Terraform criando 3 instancias AWS, Security Group e pares de chaves.
     Ansible instala e configura Kubernetes.
